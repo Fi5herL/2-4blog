@@ -89,7 +89,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" id="submit"/></li>
+										<li><input type="button" class="primary" id="submit"/></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
@@ -103,27 +103,24 @@
 						
 						<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 						<script>
-							$(function() {
-							  $('#submit').on('click', function() {
+						    $(function() {
+						      $('#submit').on('click', function() {
+							      
+							// name
+							var name = $('#name').val() || 'none';
 
-							    // name
-							    var name = $('#name').val() || 'none';
+							// email
+							var name = $('#email').val() || 'none';
 
-							    // email
-							    var name = $('#email').val() || 'none';
-
-							    // message
-							    var msg = $('#message').val() || 'none';
-
-							  });
-							});
-
+							// message
+							var msg = $('#message').val() || 'none';
+							      
+							// post
 							var data = {
 							  'entry.1624040037': name,
 							  'entry.1305084594': email,
 							  'entry.84404789': msg
 							};
-
 							$.ajax({
 							  type: 'POST',
 							  url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeW7q0xTD-LjFmpM8LZppQnsMGQn1l7OGyk4lcpp55TgXzIkQ/formResponse',
@@ -134,6 +131,9 @@
 							    alert('Thank you!');
 							  }
 							});
+
+						      });
+						    });
 						</script>
 
 						<!-- Elements -->
