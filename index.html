@@ -72,40 +72,6 @@
 
 						<!-- Contact -->
 							<article id="contact">
-							<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-							<script>
-							    $(function() {
-							      $('#submit').on('click', function() {
-
-								// name
-								var name = $('#name').val() || 'none';
-
-								// email
-								var name = $('#email').val() || 'none';
-
-								// message
-								var msg = $('#message').val() || 'none';
-
-								// post
-								var data = {
-								  'entry.1624040037': name,
-								  'entry.1305084594': email,
-								  'entry.84404789': msg
-								};
-								$.ajax({
-								  type: 'POST',
-								  url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeW7q0xTD-LjFmpM8LZppQnsMGQn1l7OGyk4lcpp55TgXzIkQ/formResponse',
-								  data: data,
-								  contentType: 'application/json',
-								  dataType: 'jsonp',
-								  complete: function() {
-								    alert('Thank you!');
-								  }
-								});
-
-							      });
-							    });
-							</script>
 								<h2 class="major">Contact</h2>
 								<form method="post" action="#">
 									<div class="fields">
@@ -128,8 +94,7 @@
 										<li><input type="submit" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
-									
-									<button type="button" id="submit" class="primary">Send</button>
+									<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeW7q0xTD-LjFmpM8LZppQnsMGQn1l7OGyk4lcpp55TgXzIkQ/viewform?embedded=true" width="100%" height="" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
 								</form>
 								<ul class="icons">
 									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
