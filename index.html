@@ -89,7 +89,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="submit" value="Send Message" class="primary" id="submit"/></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
@@ -100,6 +100,41 @@
 									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
+						
+						<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+						<script>
+							$(function() {
+							  $('#submit').on('click', function() {
+
+							    // name
+							    var name = $('#name').val() || 'none';
+
+							    // email
+							    var name = $('#email').val() || 'none';
+
+							    // message
+							    var msg = $('#message').val() || 'none';
+
+							  });
+							});
+
+							var data = {
+							  'entry.1624040037': name,
+							  'entry.1305084594': email,
+							  'entry.84404789': msg
+							};
+
+							$.ajax({
+							  type: 'POST',
+							  url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeW7q0xTD-LjFmpM8LZppQnsMGQn1l7OGyk4lcpp55TgXzIkQ/formResponse',
+							  data: data,
+							  contentType: 'application/json',
+							  dataType: 'jsonp',
+							  complete: function() {
+							    alert('Thank you!');
+							  }
+							});
+						</script>
 
 						<!-- Elements -->
 							<article id="elements">
@@ -361,7 +396,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/google_form_contact.js"></script>
 
 	</body>
 </html>
